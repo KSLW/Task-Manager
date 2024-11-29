@@ -7,7 +7,7 @@ const app = express();
 
 connectDB();
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://your-frontend-domain.com'], // Allowed origins
+    origin: ['http://localhost:3000', 'https://graceful-liger-e6b813.netlify.app/'], // Allowed origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     credentials: true, // Allow cookies if needed
 };
