@@ -11,7 +11,7 @@ const AddTask = ({ onTaskAdded }) => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.post(
-                '/api/tasks',
+                'https://task-manager-bd-a2143e403fa0.herokuapp.com/api/tasks',
                 { title, description, priority },
                 { headers: { 'x-auth-token': token } }
             );
