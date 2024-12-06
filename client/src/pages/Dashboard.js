@@ -28,7 +28,7 @@ const Dashboard = () => {
     const handleTaskDeleted = async (taskId) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`/api/tasks/${taskId}`, {
+            await axios.delete(`https://task-manager-bd-a2143e403fa0.herokuapp.com/api/tasks/${taskId}`, {
                 headers: { 'x-auth-token': token },
             });
             setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
