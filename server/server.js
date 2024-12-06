@@ -7,7 +7,7 @@ const app = express();
 
 connectDB();
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://6752da7b377e68000886580c--becomeproductive.netlify.app/'], // Allowed origins
+    origin: ['http://localhost:3000', 'https://becomeproductive.netlify.app/'], // Allowed origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     credentials: true, // Allow cookies if needed
 };
