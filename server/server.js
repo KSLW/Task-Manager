@@ -6,14 +6,23 @@ const cors = require("cors")
 const app = express();
 
 connectDB();
-const corsOptions = {
-    origin: ['http://localhost:3000', 'https://becomeproductive.netlify.app/'], // Allowed origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-    credentials: true, // Allow cookies if needed
-};
 
 app.use(express.json());
-app.use(cors(corsOptions))
+app.options('*', cors()); // Handle preflight requests for all routes
+
+// Enable CORS
+app.use(cors({
+    origin: 'https://becomeproductive.netlify.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
+
+// Example API route
+app.get('/api/some-route', (req, res) => {
+    res.json({ message: 'CORS is working!' });
+});
+
+
 app.get("/", (req, res) =>{
     res.send('Api is running')
 })
